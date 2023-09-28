@@ -461,7 +461,8 @@ body.dark .menu-bar .mode i.moon {
     border-left: 5px solid var(--primary-color);
     padding-left: 10px;
 }
-.page-content .internship-projects {
+.page-content .internship-projects,
+.page-content .game-jam-projects {
     border-left: 5px solid var(--secondary-color);
     padding: 10px;
 }
@@ -480,7 +481,8 @@ body.dark .menu-bar .mode i.moon {
 
 .page-content .game-projects-content .professional-title,
 .page-content .game-projects-content .personal-title,
-.page-content .game-projects-content .internship-title {
+.page-content .game-projects-content .internship-title,
+.page-content .game-projects-content .game-jam-title {
     font-size: 25px;
     font-weight: 600;
 }
@@ -520,7 +522,8 @@ body.dark .menu-bar .mode i.moon {
 }
 
 .page-content .professional-games-content,
-.page-content .internship-games-content {
+.page-content .internship-games-content,
+.page-content .game-jam-games-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
