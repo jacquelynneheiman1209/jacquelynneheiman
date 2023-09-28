@@ -350,6 +350,8 @@ body.dark .menu-bar .mode i.moon {
     justify-content: space-evenly;
     padding-top: 5px;
     border-bottom: 5px solid var(--secondary-color);
+    position: fixed;
+    z-index: 50;
 }
 
 .top-nav .icon {
@@ -444,21 +446,10 @@ body.dark .menu-bar .mode i.moon {
     color: var(--sidebar-color);
 }
 
-.page-content .game-projects-content {
-    background: var(--sidebar-color);
-    width: 100%;
-    border-radius: 6px;
-    padding: 20px;
-}
-
-.page-content .software-project-content {
-    background: var(--sidebar-color);
-    width: 100%;
-    border-radius: 6px;
-    padding: 20px;
-}
-
-.page-content .tutorial-projects-content {
+.page-content .game-projects-content,
+.page-content .software-project-content,
+.page-content .tutorial-projects-content,
+.page-content .internships-games-content {
     background: var(--sidebar-color);
     width: 100%;
     border-radius: 6px;
@@ -475,6 +466,18 @@ body.dark .menu-bar .mode i.moon {
     padding: 10px;
 }
 
+.page-content .professional-projects,
+.page-content .personal-projects {
+    padding-top: 10px;
+}
+
+.page-content .professional-projects,
+.page-content .internship-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .page-content .game-projects-content .professional-title,
 .page-content .game-projects-content .personal-title,
 .page-content .game-projects-content .internship-title {
@@ -484,7 +487,10 @@ body.dark .menu-bar .mode i.moon {
 
 .page-content .candy-chaos,
 .page-content .mother-ducker,
-.page-content .balloon-pop {
+.page-content .balloon-pop,
+.page-content .grey-area,
+.page-content .boss-simulator,
+.page-content .getaway-driver{
     display: flex;
     gap: 20px;
     background: var(--toggle-color);
@@ -495,19 +501,40 @@ body.dark .menu-bar .mode i.moon {
 
 .page-content .candy-chaos .game-title,
 .page-content .mother-ducker .game-title,
-.page-content .balloon-pop .game-title {
+.page-content .balloon-pop .game-title,
+.page-content .grey-area .game-title,
+.page-content .boss-simulator .game-title,
+.page-content .getaway-driver .game-title {
     font-size: 25px;
     font-weight: 600;
+}
+
+.page-content .getaway-driver .game-images .row-1 {
+    display: flex;
+    flex-direction: unset !important;
+    gap: 5px;
 }
 
 .page-content .candy-chaos .game-images {
     margin-top: 5px;
 }
 
-.page-content .professional-games-content {
+.page-content .professional-games-content,
+.page-content .internship-games-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.internship-games-content .row-1 .main-game-image {
+    border-radius: 10px;
+    width: 640px;
+    height: 533.33px;
+}
+
+.getaway-driver .game-images .row-1 .game-image {
+    width: 263px;
+    border-radius: 10px;
 }
 
 .professional-games-content .row-1 .main-game-image {
@@ -521,9 +548,14 @@ body.dark .menu-bar .mode i.moon {
 
 .professional-games-content .mother-ducker .main-game-image,
 .professional-games-content .balloon-pop .main-game-image {
-    width: 640px;
+    width: 800px;
     height: 533.33px;
     border-radius: 10px;
+}
+
+.internship-games-content .grey-area .main-game-image,
+.internship-games-content .boss-simulator .main-game-image {
+    width: 800px;
 }
 
 .row-2 {
@@ -534,14 +566,20 @@ body.dark .menu-bar .mode i.moon {
 
 .page-content .candy-chaos .game-info,
 .page-content .mother-ducker .game-info,
-.page-content .balloon-pop .game-info {
+.page-content .balloon-pop .game-info,
+.page-content .grey-area .game-info,
+.page-content .boss-simulator .game-info,
+.page-content .getaway-driver .game-info {
     width: 100%;
 }
 
 
 .page-content .candy-chaos .game-description,
 .page-content .mother-ducker .game-description,
-.page-content .balloon-pop .game-description {
+.page-content .balloon-pop .game-description,
+.page-content .grey-area .game-description,
+.page-content .boss-simulator .game-description,
+.page-content .getaway-driver .game-description {
     display: flex;
     width: 100%;
     margin-top: 5px;
@@ -551,7 +589,10 @@ body.dark .menu-bar .mode i.moon {
 
 .page-content .candy-chaos .game-info .game-description .tools-skills,
 .page-content .mother-ducker .game-info .game-description .tools-skills,
-.page-content .balloon-pop .game-info .game-description .tools-skills {
+.page-content .balloon-pop .game-info .game-description .tools-skills
+.page-content .grey-area .game-info .game-description .tools-skills,
+.page-content .boss-simulator .game-info .game-description .tools-skills,
+.page-content .getaway-driver .game-info .game-description .tools-skills {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -559,7 +600,10 @@ body.dark .menu-bar .mode i.moon {
 
 .page-content .candy-chaos .game-info .game-description .tools-skills .icon,
 .page-content .mother-ducker .game-info .game-description .tools-skills .icon,
-.page-content .balloon-pop .game-info .game-description .tools-skills .icon {
+.page-content .balloon-pop .game-info .game-description .tools-skills .icon,
+.page-content .grey-area .game-info .game-description .tools-skills .icon,
+.page-content .boss-simulator .game-info .game-description .tools-skills .icon,
+.page-content .getaway-driver .game-info .game-description .tools-skills .icon {
     height: 25px;
     width: 25px;
     font-size: 25px;
@@ -567,14 +611,20 @@ body.dark .menu-bar .mode i.moon {
 
 .page-content .candy-chaos .game-info .game-description .company,
 .page-content .mother-ducker .game-info .game-description .company,
-.page-content .balloon-pop .game-info .game-description .company {
+.page-content .balloon-pop .game-info .game-description .company,
+.page-content .grey-area .game-info .game-description .company,
+.page-content .boss-simulator .game-info .game-description .company,
+.page-content .getaway-driver .game-info .game-description .company {
     font-size: 20px;
     font-weight: 500;
 }
 
 .page-content .candy-chaos .game-info .game-description .role,
 .page-content .mother-ducker .game-info .game-description .role,
-.page-content .balloon-pop .game-info .game-description .role {
+.page-content .balloon-pop .game-info .game-description .role,
+.page-content .grey-area .game-info .game-description .role,
+.page-content .boss-simulator .game-info .game-description .role,
+.page-content .getaway-driver .game-info .game-description .role {
     font-size: 16px;
     font-weight: 500;
     margin-top: -10px;
